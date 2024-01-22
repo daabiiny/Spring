@@ -17,6 +17,7 @@
 <ul>
 	<li><a href="${cpath }/ex01">ex01</a></li>
 	<li><a href="${cpath }/ex02">ex02</a></li>
+	<li><a href="${cpath }/ex03">ex03 - 게시판</a></li>
 </ul>
 
 
