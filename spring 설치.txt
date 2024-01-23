@@ -1,0 +1,42 @@
+1. 이클립스 2019-06
+Eclipse IDE for Enterprise Java Developers
+
+2. 워크스페이스 만들어서 지정햇
+
+3. help - marketplace
+spring 검색 Spring Tools 3 standalone edition
+
+4. install anyway - restart now
+
+5. create a project - spring - spring Legacy Project
+spring MVC project
+
+프로젝트 이름 : test1 
+com.itbank.test1
+
+6. 
+window preference - general - workspace - UTF-8
+웹 브라우저 - 크롬
+컴파일러 - 자바11
+installed JREs - 지우고 add - 3번째꺼해서 - %JAVA_HOME%
+
+7. 
+server - runtime Environment - apache Tomcat 9.0 - %CATALINA_HOME%
+
+web - css files,html,jsp - utf-8
+
+8. 사진참조 
+spring elements - beans- servlet-context에 밑에 탭이 여러개 떠야함
+
+9. pom.xml : project object model (프로젝트 설정 파일)
+11로 막 바꾸고 alt f5
+
+deployment Descriptor - source 
+버전 4.0 바꾸고
+web-app_4_0.xsd 바꿔
+
+자바리소스 
+
+
+
+
