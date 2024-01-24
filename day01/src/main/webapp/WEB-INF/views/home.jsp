@@ -12,7 +12,7 @@
 <h3>접속된 DB 버전 : ${version }</h3>
 <h3>오늘 날짜 : ${sysdate }</h3>
 
-<P>  The time on the server is ${serverTime}. </P>
+<a href="member"><button>member</button></a>
 
 </body>
 </html>
