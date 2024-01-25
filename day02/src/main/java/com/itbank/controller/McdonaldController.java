@@ -24,6 +24,7 @@ public class McdonaldController {
 		mav.addObject("list", list);
 		return mav;
 	}
+	
 	@GetMapping("/mcdonald/add")
 	public ModelAndView mcdonaldAdd() {
 		ModelAndView mav = new ModelAndView("mcdonald-add");

@@ -22,5 +22,16 @@ public interface McdonaldDAO {
 
 	@Delete("delete from mcdonald where idx = #{idx}")
 	int deleteMcdonald(int idx);
+
+	List<McdonaldDTO> selectListCategory(String columnValue);
+	
+	@Select("<script>"
+			+ "select * from mcdonald "
+			+ " <if test=\"category != null\">"
+			+ "		where category = #{category}"
+			+ " </if>"
+			+ " order by idx"
+			+ "</script>")
+	List<McdonaldDTO> selectList(String category);
 	
 }
