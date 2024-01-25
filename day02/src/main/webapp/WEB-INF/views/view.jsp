@@ -13,7 +13,7 @@
 	
 	<div class="sb">
 		<div>
-			<a href="${cpath }/mcdonald"><button>목록</button></a>
+			<a href="${cpath }/mcdonald/all"><button>목록</button></a>
 		</div>
 		<div>
 			<a href="${cpath }/modify.jsp?idx=${dto.idx}"><button>수정</button></a>

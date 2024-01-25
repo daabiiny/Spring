@@ -10,8 +10,8 @@ import com.itbank.mcdonald.McdonaldDTO;
 
 public interface McdonaldDAO {
 
-	@Select("select * from mcdonald")
-	List<McdonaldDTO> selectList();
+//	@Select("select * from mcdonald")
+//	List<McdonaldDTO> selectList();
 	
 	@Insert("insert into mcdonald (category, name, price, imgName, memo)"
 			+ " values ( #{category}, #{name}, #{price}, #{imgName}, #{memo} )")
@@ -23,7 +23,6 @@ public interface McdonaldDAO {
 	@Delete("delete from mcdonald where idx = #{idx}")
 	int deleteMcdonald(int idx);
 
-	List<McdonaldDTO> selectListCategory(String columnValue);
 	
 	@Select("<script>"
 			+ "select * from mcdonald "
@@ -32,6 +31,9 @@ public interface McdonaldDAO {
 			+ " </if>"
 			+ " order by idx"
 			+ "</script>")
+	List<McdonaldDTO> selectListCategory(String columnValue);
+	
+	
 	List<McdonaldDTO> selectList(String category);
 	
 }

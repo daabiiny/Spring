@@ -17,10 +17,10 @@ public class McdonaldController {
 	
 	@Autowired private McdonaldService ms;
 	
-	@GetMapping("/mcdonald")
-	public ModelAndView mcdonaldList() {
+	@GetMapping("/mcdonald/{category}")
+	public ModelAndView mcdonaldList(@PathVariable("category") String category) {
 		ModelAndView mav = new ModelAndView("mcdonald-list");
-		List<McdonaldDTO> list = ms.getMcdonaldList();
+		List<McdonaldDTO> list = ms.getList(category);
 		mav.addObject("list", list);
 		return mav;
 	}

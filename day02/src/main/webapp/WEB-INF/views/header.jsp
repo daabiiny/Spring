@@ -70,9 +70,9 @@
 	<nav>
 		<ul>
 			<%-- a태그에 가상으로라도 링크를 걸어줘야함  --%>
-			<li><a href="${cpath }/list.jsp">전체</a></li>
-			<li><a href="${cpath }/list.jsp?category=버거">버거</a></li>
-			<li><a href="${cpath }/list.jsp?category=음료">음료</a></li>
+			<li><a href="${cpath }/macdonald/all">전체</a></li>
+			<li><a href="${cpath }/macdonald/burger">버거</a></li>
+			<li><a href="${cpath }/macdonald/drink">음료</a></li>
 		</ul>
 	</nav>
 </header>

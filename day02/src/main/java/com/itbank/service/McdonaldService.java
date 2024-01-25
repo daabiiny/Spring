@@ -28,10 +28,10 @@ public class McdonaldService {
 
 	@Autowired private McdonaldDAO dao;
 	
-	public List<McdonaldDTO> getMcdonaldList() {
-		List<McdonaldDTO> list = dao.selectList();
-		return list;
-	}
+//	public List<McdonaldDTO> getMcdonaldList() {
+//		List<McdonaldDTO> list = dao.selectList();
+//		return list;
+//	}
 	public List<McdonaldDTO> getList(String category){
 		String columnValue = null;
 		switch(category) {

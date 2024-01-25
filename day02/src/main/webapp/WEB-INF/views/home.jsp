@@ -8,7 +8,7 @@
 <body>
 <h1>Hello Mcdonald!</h1>
 
-<a href="mcdonald"><button>mcdonald</button></a>
+<a href="mcdonald/all"><button>mcdonald</button></a>
 
 </body>
 </html>
