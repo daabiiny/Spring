@@ -32,7 +32,7 @@ public class McdonaldController {
 	}
 	@PostMapping("/mcdonald/add")
 	public ModelAndView mcdonaldAdd(McdonaldDTO dto) {
-		ModelAndView mav = new ModelAndView("redirect:/mcdonald");
+		ModelAndView mav = new ModelAndView("redirect:/mcdonald/all");
 		int row = ms.add(dto);
 		System.out.println(row != 0 ? "추가 성공" : "추가 실패");
 		return mav;
@@ -50,7 +50,7 @@ public class McdonaldController {
 		int row = ms.delete(idx);
 		
 		String message = row != 0 ? "삭제 성공" : "삭제 성공";
-		String url = "/mcdonald";
+		String url = "/mcdonald/all";
 		
 		mav.addObject("message", message);
 		mav.addObject("url", url);
