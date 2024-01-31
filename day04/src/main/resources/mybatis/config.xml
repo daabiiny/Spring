@@ -6,6 +6,7 @@
 	<configuration>
 		<typeAliases>
 			<typeAlias type="com.itbank.model.BoardDTO" alias="board"/>
+			<typeAlias type="com.itbank.model.MemberDTO" alias="member"/>
 		</typeAliases>
 	
 	</configuration>
