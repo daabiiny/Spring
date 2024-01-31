@@ -1,0 +1,24 @@
+day03 - member 테이블 crud 
+
+주소			메서드	컨트롤러		서비스		DAO		SQL	JSP
+/			-	home()		-		-		-	home.jsp
+
+/member/list		GET	memberList()	getMemberList()	selectList()	select	member/list.jsp
+
+/member/{idx}		GET	member(idx)	getMember()	selectOne(idx)	select	member/info.jsp
+
+/member/join		GET	join()		-		-		-	member/join.jsp
+/member/join		POST	join(dto)	add(dto)	insert(dto)	insert	redirect:/member/login
+
+/member/delete/{idx}	GET	delete(idx)	delete(idx)	delete(idx)	delete	redirect:/
+
+/member/modify/{idx}	GET	modify(idx)	getMember()	selectOne(idx)	select	member/modify.jsp
+/member/modify/{idx}	POST	modify(dto)	modify(dto)	update(dto)	update	redirect:/
+
+/member/login		GET	login()		-		-		-	member/login.jsp
+/member/login		POST	login(dto)	login(dto)	login(dto)	select	redirect:/
+
+/member/logout		GET	logout(session)	-		-		-	redirect:/
+
+/member/resetPass	GET	resetPass()	-		-		-	member/resetPass.jsp
+/member/resetPass	POST	resetPass(dto)	resetPass(dto)	updatePass(dto)	update	redirect:/member/login

@@ -1,0 +1,24 @@
+1) 프로젝트 생성
+- name: day02
+- template: Spring MVC Project
+- topLevelPackage: com.itbank.day02
+
+2) pom.xml 
+- 자바 및 스프링 버전
+- 라이브러리 의존성(xerces, spring-jdbc, ojdbc, mybatis, mybatis-spring...)
+- 컴파일러 source/target 설정
+
+3) web.xml
+- webapp version 4.0
+- encoding filter 확인하기 (UTF-8)
+
+4) root-context.xml
+- hikariConfig, dataSource, sqlSessionFactory, sqlSessionTemplate 스프링 빈 생성
+- context:component-scan (service, repository)
+
+5) servlet-context.xml
+- topLevelPackage 이름을 com.itbank.controller 로 변경 (F2번으로 이름 변경)
+
+6) 컨트롤러 - 서비스 - DAO 구조 만들기
+7) forward 되는 JSP에서 header 구성해서 공통 소스 묶어주기
+8) 각 페이지 구성하기
