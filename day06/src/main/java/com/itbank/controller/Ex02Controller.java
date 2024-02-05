@@ -19,7 +19,7 @@ public class Ex02Controller {
 	
 	@PostMapping
 	public String ex02(MultipartFile upload, RedirectAttributes rttr) 
-			throws IllegalStateException, IOException {	
+			throws IllegalStateException, IOException {
 		// <input type="file" name="upload">
 		// multipartRequest를 일일히 매개변수에 받지 않고,
 		// String 파라미터를 매개변수를 통해 전달받는 것과 같이

@@ -29,7 +29,7 @@ public class UploadService {
 		// originalFileName과 storeFileName을 만들어서 dto에 넣어주고 dao로 넘겨야 한다
 		String originalFileName = dto.getUpload().getOriginalFilename(); // dto에 담겨있는 upload의 원래 이름
 		
-		// 마지막 .의 위치(lastIndexOf)부터 끝까지 잘라낸다(sustring)
+		// 마지막 .의 위치(lastIndexOf)부터 끝까지 잘라낸다(substring) : 확장자
 		String ext = originalFileName.substring(originalFileName.lastIndexOf("."));
 		
 		// 새로 저장될 이름은 중복되지 않도록  UUID를 사용한다

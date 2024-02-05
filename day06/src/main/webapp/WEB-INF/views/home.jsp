@@ -15,7 +15,7 @@
 
 <fieldset>
 	스프링에서의 MultipartRequest는<br>
-	이름만 같을 뿐, JSP의 MultioartRequest와 다른 클래스이다
+	이름만 같을 뿐, JSP의 MultipartRequest와 다른 클래스이다
 </fieldset>
 
 <ul>
