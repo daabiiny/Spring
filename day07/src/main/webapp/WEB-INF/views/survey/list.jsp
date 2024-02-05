@@ -7,7 +7,9 @@
 		<c:forEach var="dto" items="${list }">
 			<tr>
 				<td>${dto.idx }</td>
-				<td>${dto.title }</td>
+				<td>
+					<a href="${cpath }/survey/info">${dto.title }</a>
+				</td>
 				<td>${dto.writer }</td>
 			</tr>
 		</c:forEach>

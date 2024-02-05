@@ -32,7 +32,7 @@ public class SurveyController {
 	public String write(SurveyDTO dto) {
 		int row = surveyservice.write(dto);
 		System.out.println(row != 0 ? "등록 성공" : "등록 실패");
-		return "redirect:/survey/write";
+		return "redirect:/survey/list";
 	}
 	
 }
