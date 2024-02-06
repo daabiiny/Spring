@@ -15,14 +15,7 @@ public class ReplyController {
 
 	@Autowired private ReplyService replyservice;
 	
-	@GetMapping("/choice")
-	public void insert() {}
 	
-	@PostMapping("/choice")
-	public String insert(ReplyDTO dto) {
-		int row = replyservice.insert(dto);
-		System.out.println(row != 0 ? "설문 완료" : "설문 실패");
-		return "redirect:/survey/view";
-	}
+	
 	
 }

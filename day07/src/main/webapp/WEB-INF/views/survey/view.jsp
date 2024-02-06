@@ -11,6 +11,8 @@
 				<p>
 					<label><input type="radio" name="choice" value="1" required>${dto.contentA }</label>
 				</p>
+				<P><input type="hidden" name="writer" value="${login.userid}"></P>
+				<P><input type="hidden" name="survey_idx" value="${dto.idx }"></P>
 			</div>
 			<div>
 				<p><img src="${cpath }/upload/${dto.imageB}" width="400px"></p>
