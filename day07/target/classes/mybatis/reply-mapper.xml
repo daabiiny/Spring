@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+	 "-//mybatis.org//DTD Mapper 3.0//EN"
+	 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itbank.repository.ReplyDAO">
+	<insert id="insert" parameterType="reply">
+		insert into reply10 (writer, survey_idx, choice)
+			values
+				(#{writer}, #{survey_idx}, #{choice})
+	</insert>
+</mapper>

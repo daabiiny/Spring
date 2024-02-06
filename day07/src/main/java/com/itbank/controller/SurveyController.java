@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,6 +34,13 @@ public class SurveyController {
 		int row = surveyservice.write(dto);
 		System.out.println(row != 0 ? "등록 성공" : "등록 실패");
 		return "redirect:/survey/list";
+	}
+	@GetMapping("/view/{idx}")
+	public ModelAndView view(@PathVariable("idx") int idx) {
+		ModelAndView mav = new ModelAndView("/survey/view");
+		SurveyDTO dto = surveyservice.getSurvey(idx);
+		mav.addObject("dto", dto);
+		return mav;
 	}
 	
 }

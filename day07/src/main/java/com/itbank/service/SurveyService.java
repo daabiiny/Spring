@@ -37,5 +37,9 @@ public class SurveyService {
 		
 		return dao.insert(dto);
 	}
+
+	public SurveyDTO getSurvey(int idx) {
+		return dao.selectOne(idx);
+	}
 	
 }

@@ -12,6 +12,8 @@ public interface SurveyDAO {
 	List<SurveyDTO> selectList();
 
 	int insert(SurveyDTO dto);
+
+	SurveyDTO selectOne(int idx);
 	
 	
 	

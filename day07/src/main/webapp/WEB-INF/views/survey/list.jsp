@@ -8,7 +8,7 @@
 			<tr>
 				<td>${dto.idx }</td>
 				<td>
-					<a href="${cpath }/survey/info">${dto.title }</a>
+					<a href="${cpath }/survey/view/${dto.idx}">${dto.title }</a>
 				</td>
 				<td>${dto.writer }</td>
 			</tr>

@@ -13,5 +13,10 @@
 			values
 				(#{writer}, #{title}, #{imageA}, #{contentA}, #{imageB}, #{contentB})
 	</insert>
+	<select id="selectOne" parameterType="int" resultType="survey">
+		select * from survey10
+			where
+				idx = #{idx}
+	</select>
 	
 </mapper>

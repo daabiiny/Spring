@@ -12,6 +12,10 @@
 		width: 980px;
 		margin: auto;
 	}
+	h2 {
+		text-align: center;
+	
+	}
 
 </style>
 </head>
