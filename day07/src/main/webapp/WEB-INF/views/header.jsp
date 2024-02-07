@@ -36,7 +36,7 @@
 			<li><a href="${cpath }/member/login">로그인</a></li>
 			<li><a href="${cpath }/survey/write">설문 등록</a></li>
 			<li><a href="${cpath }/survey/list">설문 참여</a></li>
-			<li><a href="${cpath }/survey/">설문 결과</a></li>
+			<li><a href="${cpath }/reply/result">설문 결과</a></li>
 		</ul>
 	</nav>
 </header>
