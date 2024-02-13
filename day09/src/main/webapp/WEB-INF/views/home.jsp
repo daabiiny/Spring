@@ -36,6 +36,7 @@
 
 <ul>
 	<li><a href="ex01">ex01 - 부산 축제 정보 서비스 연습</a></li>
+	<li><a href="ex02">ex02 - AJAX로 API데이터 요청하여 출력하기</a></li>
 </ul>
 
 <script>
