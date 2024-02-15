@@ -17,6 +17,7 @@ public class ReplyController {
 
 	@Autowired private ReplyService replyservice;
 	
+
 	@GetMapping("/result")
 	public ModelAndView resultList() {
 		ModelAndView mav = new ModelAndView();
@@ -24,6 +25,6 @@ public class ReplyController {
 		mav.addObject("list", list);
 		return mav;
 	}
-	
+
 	
 }
