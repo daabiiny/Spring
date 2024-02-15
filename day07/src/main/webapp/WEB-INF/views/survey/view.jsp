@@ -7,7 +7,7 @@
 	<form method="POST">
 		<div style="width: 980px; display: flex; justify-content: space-between; text-align: center;">
 			<div>
-				<p><img src="${cpath }/upload/${dto.imageA}" width="400px"></p>
+				<p><img src="${cpath }/upload/${dto.imageA}" width="400px" height="300px"></p>
 				<p>
 					<label><input type="radio" name="choice" value="1" required>${dto.contentA }</label>
 				</p>
@@ -15,7 +15,7 @@
 				<P><input type="hidden" name="survey_idx" value="${dto.idx }"></P>
 			</div>
 			<div>
-				<p><img src="${cpath }/upload/${dto.imageB}" width="400px"></p>
+				<p><img src="${cpath }/upload/${dto.imageB}" width="400px" height="300px"></p>
 				<label><input type="radio" name="choice" value="2" required>${dto.contentB }</label>
 			</div>
 		</div>

@@ -9,4 +9,22 @@
 			values
 				(#{writer}, #{survey_idx}, #{choice})
 	</insert>
+	<select id="resultList" resultType="survey">
+		
+	select
+		A.*,
+		trunc(choice1Count * 100 / responseCount, 2) as choice1Rate,
+		trunc(choice2Count * 100 / responseCount, 2) as choice2Rate
+		
+		from (
+		select
+			S.*,
+			(select count(*) from reply10 where survey_idx = s.idx) as responseCount,
+			(select count(*) from reply10 where survey_idx = s.idx and reply10.choice=1) as choice1Count,
+			(select count(*) from reply10 where survey_idx = s.idx and reply10.choice=2) as choice2Count
+				from survey10 S
+		) A
+	
+	</select>
+	
 </mapper>

@@ -23,7 +23,43 @@ public class SurveyDTO {
 	private MultipartFile uploadA;
 	private MultipartFile uploadB;
 	
+	private double choice1Rate;
+	private double choice2Rate;
+	private int responseCount;
+	private int choice1Count;
+	private int choice2Count;
 	
+	
+	public double getChoice1Rate() {
+		return choice1Rate;
+	}
+	public void setChoice1Rate(double choice1Rate) {
+		this.choice1Rate = choice1Rate;
+	}
+	public double getChoice2Rate() {
+		return choice2Rate;
+	}
+	public void setChoice2Rate(double choice2Rate) {
+		this.choice2Rate = choice2Rate;
+	}
+	public int getResponseCount() {
+		return responseCount;
+	}
+	public void setResponseCount(int responseCount) {
+		this.responseCount = responseCount;
+	}
+	public int getChoice1Count() {
+		return choice1Count;
+	}
+	public void setChoice1Count(int choice1Count) {
+		this.choice1Count = choice1Count;
+	}
+	public int getChoice2Count() {
+		return choice2Count;
+	}
+	public void setChoice2Count(int choice2Count) {
+		this.choice2Count = choice2Count;
+	}
 	public MultipartFile getUploadA() {
 		return uploadA;
 	}
