@@ -16,6 +16,4 @@ public class ReplyController {
 	@Autowired private ReplyService replyservice;
 	
 	
-	
-	
 }
