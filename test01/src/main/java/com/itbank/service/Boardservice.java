@@ -36,10 +36,23 @@ public class Boardservice {
 	}
 
 	public int update(BoardDTO dto) {
+		String img = dto.getUpload().getOriginalFilename();
+		File f = new File(saveDirectory, img);
+		try {
+			dto.getUpload().transferTo(f);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		dto.setImg(img);
 		return dao.update(dto);
 	}
 
 	public int delete(int idx) {
+//		String fileName = dao.getFileName(idx); // 파일 이름 가져오고
+//		File f = new File(saveDirectory, fileName);
+//		if(f.exists()) {
+//			f.delete();
+//		}
 		return dao.delete(idx);
 	}
 

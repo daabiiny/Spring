@@ -6,6 +6,7 @@
 	<h3>글 수정</h3>
 	<form method="POST" enctype="multipart/form-data">
 		<p><input type="text" name="title" value="${dto.title }"></p>
+		<p><input type="hidden" name="idx" value="${dto.idx }"></p>
 		<p><input type="text" name="writer" value="${login.userid }" readonly></p>
 		<div><textarea name="content" placeholder="내용"
 		style="resize: none; width: 600px; height: 300px;">${dto.content }</textarea></div>

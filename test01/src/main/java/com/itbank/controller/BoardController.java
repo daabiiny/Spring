@@ -53,7 +53,7 @@ public class BoardController {
 	public String modify(BoardDTO dto) {
 		int row = boardservice.update(dto);
 		System.out.println(row != 0 ? "수정 완료" : "수정 실패");
-		return "redirect:/board/view";
+		return "redirect:/board/view/{idx}";
 	}
 	@GetMapping("/delete/{idx}")
 	public String delete(@PathVariable("idx") int idx) {
