@@ -10,11 +10,22 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.js"></script>
 <script>
+	
 	// 자바스크립트 함수 정의
+	function getCurrentHHmm() {
+		const d = new Date()
+		let h = d.getHours()
+		let m = d.getMinutes()
+		if(h < 10) h = '0' + h
+		if(m < 10) m = '0' + m
+		return h + ':' + m
+	}
+	
+	// 서버(브로커)가 보낸 JavaBeans -> JSON 문자열을 다시 Javascript 객체로 변환 
 	function onReceive(chat){
 		const content = JSON.parse(chat.body)
-		const from = content.from
-		const text = content.text
+		const from = content.from	// 누구한테서 온건지
+		const text = content.text	// 어떤 내용인지
 		let str = ''
 		str += '<div class="' + (from == 'service' ? 'service' : from == username ? 'right' : 'left') + '">'
 		str += '<div>'
@@ -25,13 +36,18 @@
 		messageArea.scrollTop = messageArea.scrollHeight
 	}
 	
+// 	1. 구독(event)
+// 	2. 나 여기 입장했다 메시지 전달
 	function onConnect() {
 		console.log('STOMP Connection')
+		// /broker/room/' + roomId로 보내는 메시지가 있을때마다 onReceive를 할것이다!
+		// onReceive를 바로 실행하는 것이 아니라 그냥 저슷흐 구독! 연결 이벤트만 걸어놓은거
+		// onReceive()를 해야 함수가 실행됨
 		stomp.subscribe('/broker/room/' + roomId, onReceive)	// 구독할 채널, 메시지 받으면 실행할 함수
 		stomp.send('/app/enter/' + roomId, {}, JSON.stringify({	// 서버에게 입장 메시지와 시간을 보낸다
 			roomId: roomId,
 			from: username,
-// 			time: getCurrentHHmm(),
+			time: getCurrentHHmm(),
 		}))
 		document.querySelector('input[name="msg"]').focus()
 	}
@@ -47,18 +63,28 @@
 			roomId: roomId,
 			from: username,
 			text: text,
-// 			time: getCurrentHHmm(),
+			time: getCurrentHHmm(),
 		}))
 		document.querySelector('input[name="msg"]').focus()
 			
 	}
-		
+	function onDisconnect(event) {	// a태그의 기본작동을 막는다
+		event.preventDefault()
+		console.log(username + ' disconnect from [' + roomId + ']')
+		stomp.send('/app/disconnect/' + roomId, {}, JSON.stringify({
+			roomId: roomId,
+			from: username,
+			time: getCurrentHHmm(),
+		}))
+// 		location.href = event.target.href
+ 		location.href = this.href
+	}
+	
 	// JSP에서 자바스크립트로 넘기는 변수
 	const roomName = '${room.name}'
 	const roomId = '${room.roomId}'
 	const username = '${username}'
 	const cpath = '${cpath}'
-	
 	
 </script>
 <style>
@@ -140,7 +166,7 @@
 	
 	stomp.connect({}, onConnect)
 	
-	// leaveLink.onclick = onDisconnect
+	leaveLink.onclick = onDisconnect
 	sendBtn.onclick = onInput
 	msgInput.onkeyup = function(e){
 		if(e.key == 'Enter') onInput()

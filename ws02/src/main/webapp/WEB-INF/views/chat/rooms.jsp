@@ -20,6 +20,7 @@
 	</form>
 </fieldset>
 
+
 <ul>
 	<c:forEach var="room" items="${list }">
 		<li><a href="${cpath }/chat/room?roomId=${room.roomId}">${room.name }</a></li>
